@@ -12,9 +12,11 @@ section: "Basics"
 ## Open your first exercise
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The original launch and empty-editor expectations are replaced by ./learn and your
-> existing dashboard. This starts Neovim with your installed settings, rather than the
-> separate system Vim.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The original launch and empty-editor expectations are replaced by ./learn
+> and your existing dashboard. This starts Neovim with your installed
+> settings, rather than the separate system Vim.
 
 From the repository root, run:
 

@@ -12,10 +12,12 @@ description: "Coconut oil in hand, you are ready to navigate some files with e."
 ## Navigation recap in your setup
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** This recap substitutes your explorer, file-picker and quickfix keys for the original
-> setup. All listed custom navigation keys are installed. :edit, marks and register
-> operations are built-in; :luafile % is a command, with an optional shortcut recipe in
-> Remaps part 2.
+> **CHANGED FOR YOUR SETUP.**
+>
+> This recap substitutes your explorer, file-picker and quickfix keys for the
+> original setup. All listed custom navigation keys are installed. :edit,
+> marks and register operations are built-in; :luafile % is a command, with an
+> optional shortcut recipe in Remaps part 2.
 
 - Space e opens/focuses nvim-tree; Ctrl+n toggles it.
 - `:edit path/to/file` opens a file directly.

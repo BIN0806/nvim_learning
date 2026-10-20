@@ -17,8 +17,10 @@ just a swift couple taps of the finger you could be in a file marked.  I find
 marks definitely the end game of file navigation, but they are hard to do well.
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** Only the project launch changed. Uppercase marks such as mA and jumps such as
-> apostrophe-A are built-in Vim actions and need no custom mappings.
+> **CHANGED FOR YOUR SETUP.**
+>
+> Only the project launch changed. Uppercase marks such as mA and jumps such
+> as apostrophe-A are built-in Vim actions and need no custom mappings.
 
 Run `./learn nav` from the course root. Its working directory is the prepared
 navigation project; open three files and mark each one.
@@ -36,6 +38,7 @@ Repeat with `src/twitch.c` and `src/another.c` with different uppercase
 characters.  Remember the 3 characters you chose.
 
 To navigate to the files you marked simply press `'<MarkLetter>`.  So for me, I
+
 chose `G` for `sockets.c`, and to navigate there I simply press `'G`.
 
 ### Some mark theory

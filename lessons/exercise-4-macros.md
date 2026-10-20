@@ -10,9 +10,12 @@ description: "Macros"
 > launch writable exercises with `./learn 0` through `./learn 6`.
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** Macro keys are unchanged. The installed completion guard skips its key injection while
-> recording/replaying, so inserted text remains in the macro. Normal completion still
-> initializes outside macros. Record with qa, stop with q, and replay with @a.
+> **CHANGED FOR YOUR SETUP.**
+>
+> Macro keys are unchanged. The installed completion guard skips its key
+> injection while recording/replaying, so inserted text remains in the macro.
+> Normal completion still initializes outside macros. Record with qa, stop
+> with q, and replay with @a.
 
 // Yes I wrote this code with a macro
 if (someValue == "someOtherValue1") {

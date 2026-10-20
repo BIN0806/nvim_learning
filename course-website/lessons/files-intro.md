@@ -10,9 +10,11 @@ description: "Coconut oil in hand, you are ready to navigate some files."
 > launch writable exercises with `./learn 0` through `./learn 6`.
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The navigation clone is already prepared under .practice/navigation. Use the launcher to
-> set the working directory correctly; your explorer is nvim-tree, replacing the original
-> NetRW interface.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The navigation clone is already prepared under .practice/navigation. Use the
+> launcher to set the working directory correctly; your explorer is nvim-tree,
+> replacing the original NetRW interface.
 
 This course's companion navigation project is ready under `.practice/navigation`.
 Start it from the course root:

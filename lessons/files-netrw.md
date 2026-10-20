@@ -12,9 +12,11 @@ description: "Coconut oil in hand, you are ready to navigate some files with nvi
 ## Your explorer: nvim-tree
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The original NetRW :Vex / Space p v instructions are replaced by Space e for nvim-tree.
-> Space e and Ctrl+n already exist in your profile; the explorer controls below are its
-> real controls.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The original NetRW :Vex / Space p v instructions are replaced by Space e for
+> nvim-tree. Space e and Ctrl+n already exist in your profile; the explorer
+> controls below are its real controls.
 
 Start `./learn nav`, then press Esc followed by **Space e**. This opens or focuses
 the file tree. Use `j`/`k` to select `src`, Enter to expand it, and Enter on

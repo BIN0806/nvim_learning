@@ -33,7 +33,8 @@ projects are unaffected by those process-local presentation adjustments.
 
 The notes are visible Markdown callouts, placed **before the affected
 instruction**. They stay visible when reading the file directly in Neovim and
-when viewing rendered Markdown.
+when viewing rendered Markdown. Labels occupy their own line and note prose
+is wrapped for reading in an ordinary Neovim window.
 
 | Label | What it means |
 | --- | --- |

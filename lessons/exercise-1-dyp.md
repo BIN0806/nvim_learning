@@ -8,10 +8,13 @@ description: "This is the basic movement and editing of text"
 
 > Local edition for Billy’s NvChad keys. Read the repository README first;
 > launch writable exercises with `./learn 0` through `./learn 6`.
+
 ## NOTE
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The original download step is replaced by a writable local copy. Native dd, yy, p/P and
-> selections remain available.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The original download step is replaced by a writable local copy. Native dd,
+> yy, p/P and selections remain available.
 
 Run `./learn 1` from the course root to edit a writable copy. Your previous copy is preserved.
 
@@ -36,9 +39,11 @@ Highlight this line by pressing V, then navigate around
 escape to leave visual mode
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** Your Visual-mode p preserves the copied register when replacing a selection. Once y has
-> ended Visual mode, the following normal p behaves as the course expects. No extra
-> mapping is needed.
+> **CHANGED FOR YOUR SETUP.**
+>
+> Your Visual-mode p preserves the copied register when replacing a selection.
+> Once y has ended Visual mode, the following normal p behaves as the course
+> expects. No extra mapping is needed.
 
 #### Visual Mode + y / p
 Highlight this line by pressing V, then press y  (What happened?)

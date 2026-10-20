@@ -22,6 +22,7 @@ for the actual course so your installed shortcuts apply.
 
 ```bash
 > ed my-file.ts
+
 ```
 
 You probably feel lost, press q to get the heck out of there.  (on FEM I do
@@ -35,6 +36,7 @@ ex my-file.ts
 
 ex is the improved version of ed.  It also comes with Bill Joy's vi mode.  Go
 ahead, type `vi<enter>`.  Welcome to vi!  The predecessor of vim.  :q to get
+
 out.
 
 Some fun facts about vi mode in ex.
@@ -106,10 +108,12 @@ You may feel confused, so ask questions.
 ## Prereqs
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The original asks you to clone the navigation
-> playground yourself. It is already prepared here; use ./learn nav below.
-> The earlier ed/ex examples demonstrate separate historical editors; your
-> Neovim mappings apply to the main course launched with ./learn.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The original asks you to clone the navigation playground yourself. It is
+> already prepared here; use ./learn nav below. The earlier ed/ex examples
+> demonstrate separate historical editors; your Neovim mappings apply to the
+> main course launched with ./learn.
 
 * Unix System as I cannot help you if you are on windows and you experience and
   problems.  I suggest Plebuntu

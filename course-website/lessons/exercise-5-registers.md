@@ -42,9 +42,11 @@ from our previous lesson, but now we observe why.
 ### Your Visual paste behavior
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The original assumes ordinary Visual paste register behavior. Your mapped Visual p
-> preserves the copied text, allowing repeated replacement. This is already configured;
-> explicit register commands below remain native.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The original assumes ordinary Visual paste register behavior. Your mapped
+> Visual p preserves the copied text, allowing repeated replacement. This is
+> already configured; explicit register commands below remain native.
 
 Normal-mode p/P and explicit registers behave as taught here. Your Visual-mode
 p replaces the selection while preserving the previously copied text, so it can

@@ -11,6 +11,7 @@ description: "And you thawght you knew Motions..."
 
 We have already covered some of the horizontal and vertical motions, `I`/`A`
 and `<count>j`/`k` are great examples of fast motions.  But if that is all we
+
 had, VIM would just be lacking in luster.
 
 ### Quick Recap
@@ -30,9 +31,11 @@ lets do an exercise and go over some advanced motions!
 
 #### Example time
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The exercise download and Vim launch were replaced by a local ./learn copy so the
-> instruction text matches your settings. The built-in editing operations in this section
-> do not need extra bindings.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The exercise download and Vim launch were replaced by a local ./learn copy
+> so the instruction text matches your settings. The built-in editing
+> operations in this section do not need extra bindings.
 
 ```bash
 ./learn 6

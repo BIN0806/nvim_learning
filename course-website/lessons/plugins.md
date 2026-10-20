@@ -12,16 +12,21 @@ description: "Lets beef up the RC!"
 ## Your plugin manager is already installed
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** The original installs Vim-Plug and FZF. Your profile already has Lazy and Telescope, so
-> those installation steps were replaced rather than adding a second manager and finder.
+> **CHANGED FOR YOUR SETUP.**
+>
+> The original installs Vim-Plug and FZF. Your profile already has Lazy and
+> Telescope, so those installation steps were replaced rather than adding a
+> second manager and finder.
 
 Your setup uses **Lazy**. Run `:Lazy` to inspect the plugin list. Fuzzy finding
 is supplied by **Telescope**, already installed; no Vim-Plug or FZF installation
 is needed for this local course.
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP — ALREADY BOUND.** The original Ctrl+p FZF example becomes Space f f with Telescope; the other finder rows
-> below are existing mappings, not new bindings you must install.
+> **CHANGED FOR YOUR SETUP — ALREADY BOUND.**
+>
+> The original Ctrl+p FZF example becomes Space f f with Telescope; the other
+> finder rows below are existing mappings, not new bindings you must install.
 
 Run `./learn nav`, then try:
 

@@ -23,15 +23,19 @@ Lets see the difference
 
 ### Horizontal Movement
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP — ALREADY BOUND.** The original uses plain semicolon to repeat f/F/t/T. Your semicolon opens command mode,
-> so this drill uses Space ; instead. It is already bound with a non-recursive mapping;
-> the commented definition below is only for restoring a missing binding.
+> **CHANGED FOR YOUR SETUP — ALREADY BOUND.**
+>
+> The original uses plain semicolon to repeat f/F/t/T. Your semicolon opens
+> command mode, so this drill uses Space ; instead. It is already bound with a
+> non-recursive mapping; the commented definition below is only for restoring
+> a missing binding.
 
 ```lua
 -- ALREADY BOUND: Space ; repeats the previous f/F/t/T in its original direction.
 -- Your plain ; still opens command mode. A non-recursive mapping is essential here.
 -- If missing: add to lua/mappings.lua, uncomment, save and restart Neovim.
 -- vim.keymap.set("n", "<leader>;", ";", { desc = "Repeat last character find" })
+
 ```
 
 Lets learn about!: `_`, `0`, `$`, `D`, `C`, `S`, `f`, `,`, `Space ;`, `t`, `F`, and `T`
@@ -80,8 +84,10 @@ This next one is a bit odd
 So lets do another type of navigation.
 
 > [!NOTE]
-> **CHANGED FOR YOUR SETUP.** Ctrl+d/u still scroll by half a window and additionally center the viewport in your
-> settings. No new scroll binding is needed.
+> **CHANGED FOR YOUR SETUP.**
+>
+> Ctrl+d/u still scroll by half a window and additionally center the viewport
+> in your settings. No new scroll binding is needed.
 
 Try pressing `<C-d>`
 
@@ -226,6 +232,7 @@ What _other_ letter do you think you could try other than `i`?
 .
 .
 use `<C-d>` to go down...
+
 .
 .
 .
