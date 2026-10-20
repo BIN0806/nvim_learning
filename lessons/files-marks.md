@@ -38,7 +38,6 @@ Repeat with `src/twitch.c` and `src/another.c` with different uppercase
 characters.  Remember the 3 characters you chose.
 
 To navigate to the files you marked simply press `'<MarkLetter>`.  So for me, I
-
 chose `G` for `sockets.c`, and to navigate there I simply press `'G`.
 
 ### Some mark theory

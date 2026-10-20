@@ -29,13 +29,11 @@ lets type `:e <ctrl-d>`.  You should see the following
 ![Edit and Ctrl+D](./images/edit-ctrl-d.png)
 
 There is also tab completion!  Try it out. `:e <tab>`.  But how do we navigate
-
 the popup list?  Well there are two options.  There is the vim way, and the
 default way that most people would do.  I bet you can guess which one you
 already know... :)
 
 Anywho, arrow keys work, but eww. `<C-p>` (Ctrl+p, remember this is vim
-
 syntax). and `<C-n>` mean previous and next respectively.
 
 ### Fuzzy find anyone?

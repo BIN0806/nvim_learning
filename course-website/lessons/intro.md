@@ -22,7 +22,6 @@ for the actual course so your installed shortcuts apply.
 
 ```bash
 > ed my-file.ts
-
 ```
 
 You probably feel lost, press q to get the heck out of there.  (on FEM I do
@@ -36,7 +35,6 @@ ex my-file.ts
 
 ex is the improved version of ed.  It also comes with Bill Joy's vi mode.  Go
 ahead, type `vi<enter>`.  Welcome to vi!  The predecessor of vim.  :q to get
-
 out.
 
 Some fun facts about vi mode in ex.

@@ -25,15 +25,12 @@ Your existing file-tree mapping has this shape:
 -- If it is missing in a different profile, put this in lua/mappings.lua.
 -- Remove the leading "-- " from the mapping lines, save and restart Neovim.
 -- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", {
-
 --   desc = "Focus file explorer",
 -- })
 ```
 
 `n` means Normal mode. `<leader>` is Space in your setup. The left side is the
-
 keys you press, and the right side is the action. `<CR>` means Enter.
-
 `vim.keymap.set` is non-recursive by default.
 
 Press **Space e** now: your real explorer opens or gains focus. The mapping is
@@ -56,7 +53,6 @@ Use `:verbose nmap <leader>e` to inspect the active mapping.
 -- To enable, remove the leading "-- " from the mapping lines below.
 -- Save the Lua experiment with :w before using this shortcut; restart Neovim after binding it.
 -- vim.keymap.set("n", "<leader>lr", function()
-
 --   if vim.bo.filetype ~= "lua" or vim.api.nvim_buf_get_name(0) == "" then
 --     return vim.notify("Open and save the Lua experiment first")
 --   end

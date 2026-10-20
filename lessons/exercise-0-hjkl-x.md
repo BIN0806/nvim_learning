@@ -8,7 +8,6 @@ description: "This is the first exercise to try out."
 
 > Local edition for Billy’s NvChad keys. Read the repository README first;
 > launch writable exercises with `./learn 0` through `./learn 6`.
-
 ## NOTE
 > [!NOTE]
 > **CHANGED FOR YOUR SETUP.**

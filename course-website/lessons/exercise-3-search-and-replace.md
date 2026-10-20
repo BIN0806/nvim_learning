@@ -36,18 +36,15 @@ errooentuhoneuhnoteuhnotehuor
 
 ### Search and Replace
 replace "foo" with "baz" by typing `:s/foo/baz<CR>`
-
 foo bar baz
 
 Try again but notice that it only replaces one foo at a time.
 foo foo foo foo
 
 replace "foo" with "baz" by typing `:s/foo/baz/g<CR>`
-
 foo foo foo foo
 
 replace "foo" with "baz" by typing `:s/foo/baz/gc<CR>`
-
 foo foo foo foo
 
 

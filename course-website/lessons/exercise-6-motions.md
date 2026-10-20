@@ -35,7 +35,6 @@ Lets see the difference
 -- Your plain ; still opens command mode. A non-recursive mapping is essential here.
 -- If missing: add to lua/mappings.lua, uncomment, save and restart Neovim.
 -- vim.keymap.set("n", "<leader>;", ";", { desc = "Repeat last character find" })
-
 ```
 
 Lets learn about!: `_`, `0`, `$`, `D`, `C`, `S`, `f`, `,`, `Space ;`, `t`, `F`, and `T`
@@ -232,7 +231,6 @@ What _other_ letter do you think you could try other than `i`?
 .
 .
 use `<C-d>` to go down...
-
 .
 .
 .

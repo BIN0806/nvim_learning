@@ -41,13 +41,9 @@ next/previous-result navigation can do useful work.
 -- ALREADY BOUND in your full profile. These are recovery examples, not pending setup.
 -- If missing in another profile: add to lua/mappings.lua, uncomment, save and restart.
 -- vim.keymap.set("n", "]q", "<cmd>cnext<CR>", { desc = "Next quickfix result" })
-
 -- vim.keymap.set("n", "[q", "<cmd>cprev<CR>", { desc = "Previous quickfix result" })
-
 -- vim.keymap.set("n", "<leader>qo", "<cmd>copen<CR>", { desc = "Open quickfix list" })
-
 -- vim.keymap.set("n", "<leader>qc", "<cmd>cclose<CR>", { desc = "Close quickfix list" })
-
 ```
 
 | Keys / command | Action |

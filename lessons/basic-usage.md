@@ -60,7 +60,6 @@ if (true) {
 ```
 
 Press `<esc>` or `<Ctrl-c>` (abbreviated `<C-c>`) to leave `INSERT` mode and back
-
 to `NORMAL`.
 
 Your existing Catppuccin/NvChad interface stays available throughout.

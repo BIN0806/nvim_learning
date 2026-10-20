@@ -12,7 +12,6 @@ description: "This is the first exercise to try out."
 // Delete the description.
 // That seems slow right?
 // <count>Delete
-
 // try typing, with your cursor on the first line the following.
 // 7dd
 // What does that mean about j and k?
