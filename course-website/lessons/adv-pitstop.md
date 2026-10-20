@@ -1,16 +1,20 @@
 ---
-path: "/adv-pit-stop"
+path: "/pit-stop"
 title: "Pit Stop"
 order: "53A"
 section: "Advanced Text Manipulation"
 description: "There has been a lot of info.  Lets recap!"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### The Recap Recap
 
 #### Basic Movements
 #### File Navigation
 #### Vim RC
+#### Advanced Text Manipulation
 
 ### Moving forward
 We are going to step it up a notch and improve our knowledge of vim Motions.

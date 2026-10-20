@@ -3,72 +3,37 @@ path: "/files-remaps-2"
 title: "Files and Navigations - Remaps part 2"
 order: "14A"
 section: "Navigation"
-description: "Coconut oil in hand, you are ready to navigate some files with NetRW."
+description: "Coconut oil in hand, you are ready to navigate some files with nvim-tree."
 ---
 
-### Remaps
-Remaps are a powerful way to redefine your vim exerience the way you would like
-it.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-In your vim rc, add the following line
+## Read a mapping in Lua
 
-```viml
-let mapleader = " "
-nnoremap <leader>pv :Vex<CR>
+Your existing file-tree mapping has this shape:
+
+```lua
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", {
+  desc = "Focus file explorer",
+})
 ```
 
-First, what is `let mapleader = " "`.  Leader is a way to set a custom key in
-vim that can be referenced in remaps as `<leader>`.
+`n` means Normal mode. `<leader>` is Space in your setup. The left side is the
+keys you press, and the right side is the action. `<CR>` means Enter.
+`vim.keymap.set` is non-recursive by default.
 
-Second, what is `nnoremap`?  Well its the syntax for a remap.  Lets break it down
+Press **Space e** now: your real explorer opens or gains focus. The mapping is
+already installed, so you do not need to paste the sample into another vimrc.
+Use `:verbose nmap <leader>e` to inspect the active mapping.
 
-```viml
-mode lhs rhs
-```
+## Reloading experiments versus your full editor
 
-#### mode
-lets go over the meaning of the mode.  The mode is what mode (INSERT, NORMAL,
-VISUAL) that this remap should work in.  Here is the exact breakdown of the
-remap.
+Use `./learn plugin` to open a local Lua experiment. For an actual Lua file,
+`:luafile %` executes that file; it is not a command to run on this Markdown lesson.
+For changes to installed options, mappings or plugin declarations, save and
+restart Neovim to verify the complete startup. Reloading the entire init.lua
+inside a running Lazy setup is not required by this course.
 
-```viml
-" normal mode        no recursive execution          map A -> B
-n                    nore                            map
-```
-
-#### lhs
-lhs is the set of keys to execute the remap.  In this case `<leader>pv` or
-`<space>pv`.
-
-#### rhs
-rhs is the command to execute after the `lhs` has been typed in.  In this case
-we will type the command `:Vex<CR>`.  Remember, `<CR>` means enter.
-
-#### Lets execute it!
-Ok, press `<leader>pv`, did anything happen?  No, why not?  Of course!  Vim
-never executed these new changes.  Lets source the file.
-
-```viml
-" so = source
-" % = current file
-:so %
-```
-
-Now lets try again! did anything happen?
-
-#### Dangers of remaps
-It can make your system feel slow..
-
-#### Exercise time
-Sourcing the vimrc kind of stinks huh?  Could we remap this?
-
-Take a shot at remapping it.
-
-```viml
-" I use neovim, btw
-nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-```
-
-Now I can simply press `<space><enter>` to resource my vim rc anytime I make
-changes.
-
+The upstream Space+Enter/init.vim reload mapping is replaced by that explicit
+save/restart workflow. Space e remains your explorer key everywhere.

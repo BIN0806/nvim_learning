@@ -6,6 +6,9 @@ section: "Misc Content"
 description: "Macros"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 // Yes I wrote this code with a macro
 if (someValue == "someOtherValue1") {
     return 1

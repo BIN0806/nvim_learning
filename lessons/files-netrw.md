@@ -1,62 +1,26 @@
 ---
 path: "/files-netrw"
-title: "Files and Navigations - NetRW"
+title: "Files and Navigations - nvim-tree"
 order: "12A"
 section: "Navigation"
-description: "Coconut oil in hand, you are ready to navigate some files with NetRW."
+description: "Coconut oil in hand, you are ready to navigate some files with nvim-tree."
 ---
 
-NetRW is the default browsing of the filesystem plugin, and it comes with vim
-for years now.  It is available in both Vim and NeoVim.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-Please navigate to `vim-nav-playground`.  If you did not clone it, it can be
-found [here](https://github.com/ThePrimeagen/vim-nav-playground)
+## Your explorer: nvim-tree
 
-Lets go over some basic movements.  You can use all the same navigation as you
-would while editing, but for file navigation.
+Start `./learn nav`, then press Esc followed by **Space e**. This opens or focuses
+the file tree. Use `j`/`k` to select `src`, Enter to expand it, and Enter on
+`twitch.c` to open it. Enter on an open directory collapses it.
 
-```viml
-vim .
-```
+Press **Space e** to return to the explorer. **Ctrl+n** toggles its visibility.
+**Ctrl+h/j/k/l** moves between editor windows and tmux panes; `Ctrl+w` followed
+by `h/j/k/l` also retains the built-in Neovim window navigation.
 
-Lets go down, `j`, to `src` and press `<CR>` (enter).  Notice that it opens the
-folder.  We see a couple of files.  Lets scroll to `twitch.c` and press `<CR>`.
+You can open files directly with `:edit src/sockets.c`. Your Normal-mode
+**Space f f** opens the file picker and **Space f w** searches project text.
 
-What just happened?
-
-How do we open back up our file navigation?
-
-```viml
-:Vex
-```
-
-`:Vex` stands for (V)ertical (ex)plore.  Meaning, split the current view
-experience vertically (direction of line) and insert a netrw at current
-buffer location.
-
-This is pretty - ok -.  Hopefully, if you are of the vim mentality, you are
-thinking it cannot take this many keystrokes just to do these things.  I must
-be able to customize the netrw experience.  The answer, of course, is yes to
-both.
-
-Lets step up our vim knowledge.
-First, lets quit and re-open up our vimrc.
-
-If you don't remember, or starting here, here is our vimrc so far.
-
-[Vim My Way](/vim-my-way)
-[Color My Pencils](/color-my-pencils)
-
-```viml
-set scrolloff=8
-set number
-set relativenumber
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-
-" This was from the colorscheme section
-colorscheme desert
-```
-
+NetRW is disabled in this NvChad profile. The upstream `:Vex` action is replaced
+here by Space e / nvim-tree; the rest of the course uses the same keys.

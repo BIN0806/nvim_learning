@@ -6,42 +6,23 @@ description: "Lets open vim for the first time!"
 section: "Basics"
 ---
 
-## Before you do
-* Navigate to an empty directory (create your own).  We will be doing a bit of
-  editing.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-* Ensure you have no vim rc active.
-  * If you are using vim, rename ~/.vimrc -> ~/.vimrc2
-  * If you are using nvim, rename ~/.config/nvim/init.vim -> ~/.config/nvim/init.vim2
+## Open your first exercise
 
-### Exercises
-We will be using curl to grab a few exercises throughout this class.  Here is
-an example.
+From the repository root, run:
 
-#### Note
-Notice that i name the downloaded file then `&& vim name`
-
-```bash
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-0-hjkl-x.md > exercise.md && vim exercise.md
+```sh
+./learn 0
 ```
 
-## One more thing before we start
-We are going to start from when Adam met Eve.  So if you have some experience
-you can probably skip the next couple sections.  There is always valuable
-information that may not know, but it may not be worth the time.
+This starts your installed Neovim with a writable copy of the local exercise.
+It does not download an older unadapted version or replace your configuration.
 
-When I started, vim motions were chief most important, not vim itself.  This
-course will reverse that.  Vim will be the spot light, motions will actually
-take a backseat.  I will show you what is available though.
+Press Esc to enter Normal mode. Use `i` to type and Esc to stop typing. Your `jk`
+Insert-mode shortcut also leaves Insert mode. `:w` saves; `:q` quits after saving;
+`:q!` explicitly discards unsaved changes in the current buffer.
 
-## Lets open vim!
-So you are in an empty directory, lets do this! Simply type `vim` and press
-enter.  (Ensure you have no vim rc)
-
-```bash
-> vim
-```
-
-* What are you thoughts?
-* What are things you expected to see?
-
+For a normal blank editor outside the course, use `nvim`; your NvChad dashboard
+appears. `Space u d` opens that dashboard from an existing editing window.

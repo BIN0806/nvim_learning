@@ -6,74 +6,34 @@ section: "Quickfix Lists"
 description: "One of the last components of the vim experience."
 ---
 
-Quickfix lists were very mysterious to me when I started with vim.  I knew that
-there was a list of items and that it would pop up and if I left them I didn't
-know how to go back.  Little did I know how useful they are, especially when
-navigating histories, such as git.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-Lets create a quick quickfix
+## Make a real quickfix list
 
-open up vim in the root of `vim-nav-playground`
+Run `./learn nav` from the course root. Then, in Neovim:
 
-```bash
-vim .
-```
-
-now execute
-
-```viml
-:grep SOCKET_OPEN **/*.(c\|h)
-```
-
-You should see something like this:
-
-![QuickFix Result](images/quickfix-grep-result.png)
-
-Once you press `<CR>` you will see that the results disappear and you are
-navigated to the first result.  What should you do?  The proper answer is
-consult the `:h quickfix` page, but since I am here, let me walk you through
-some actions.
-
-When dealing with a quickfix you need 3 commands primarily, `:copen`, `:cnext`,
-and `:cprev`.  Lets try `:copen` first.  Once you have executed it you should
-see the following.
-
-![QuickFix Open](images/quickfix-open.png)
-
-Lets select the other option.  This will cause the above buffer to navigate and
-the quickfix list will remain open.  Oh no, how do we get back to the quickfix
-list?
-
-you could navigate back by executing a copen
-```viml
+```vim
+:vimgrep /SOCKET_OPEN/gj src/*.c
 :copen
 ```
 
-you could force navigate back by closing the current window.  There is nothing
-left but going back to the remaining buffer that is open.
-```viml
-:q
-```
+This searches the provided C fixtures and fills the quickfix list. It does not
+rely on your shell's glob/grep syntax. There must be matching results before
+next/previous-result navigation can do useful work.
 
-You can window navigate.  You can start a window navigation by pressing
-`<C-w>`.  What do you think you should press next to navigate towards the
-quickfix menu?
+| Keys / command | Action |
+| --- | --- |
+| Space q o / :copen | Open/focus the quickfix list. |
+| ]q / :cnext | Jump to the next result. |
+| [q / :cprev | Jump to the previous result. |
+| Space q c / :cclose | Close the quickfix window. |
+| Enter in the list | Open the selected result. |
+| Ctrl+h/j/k/l | Move between editor windows and tmux panes. |
+| Ctrl+w then h/j/k/l | Built-in window navigation also works. |
 
-If you said `j` you are awesome.  YES!  Use your vim movements you already
-know!  Don't you love when things come full circle!
+The upstream Ctrl+k/Ctrl+j quickfix mappings would replace your pane navigation,
+so this edition teaches ]q/[q instead. Ctrl+e keeps its existing scrolling action.
 
-Anywho, so you can guess you can move betwixt splits by press `<C-w>` and `h`,
-`j`, `k`, or `l`.  This is great, but it kind of sucks.
-
-
-### WHAT DO WE DO NOW???
-If I have to say make a remap one more time.
-
-```viml
-" I don't know if I love these remaps yet.  I am considering doing
-" <leader>c(k|j|o)
-nnoremap <C-k> :cnext<CR>
-nnoremap <C-j> :cprev<CR>
-nnoremap <C-E> :copen<CR>
-```
-
+Use `:help quickfix` to explore the list, its entries and commands. Re-run the
+vimgrep command to rebuild the fixture list after experimenting.

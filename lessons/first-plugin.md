@@ -6,46 +6,35 @@ section: "Your First Plugin"
 description: "Time to learn viml."
 ---
 
-So... before we get started.  I hate VimL.  I think its gross.  Its Ugly.  Its
-all around unpleasant to write.  This is the primary reason why I use NeoVim,
-not Vim.  I can write my plugins in Lua.  
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-Lua is not bad.  Its a simple language that is extremely boring, which makes it
-a great candidate for a scripting language of simple ui elements.
+## Write a local Lua plugin experiment
 
----
+From the course root:
 
-This is meant to show you the power of Vim and its scriptability.  As said, its
-better in Lua.
-
-We are going to walk through [Writing Vim Plugin By Łukasz Jan
-Niemier](https://vimways.org/2019/writing-vim-plugin/).
-
-### Remember your VimRC?
-Start by executing `:h runtimepath`
-
-We need to add to the runtime path a directory to be loaded and it should
-contain a folder called `plugin` where we have our plugin located.
-
-```
-mkdir -p /path/to/your/plugin/folder
-cd /path/to/your/plugin/folder
-vim --cmd "set rtp+=$(pwd)" .
+```sh
+./learn plugin
 ```
 
-We have opened up vim and added to the runtime path at opening our current
-folder.  This is _a_ way to do this.
+This prepares `.practice/plugin-demo/plugin/course_hello.lua` only if it does
+not exist, and opens your current copy. Its initial code is:
 
-You can also install your plugin like any other!
-
+```lua
+vim.api.nvim_create_user_command("CourseHello", function()
+  vim.notify("Hello from your practice plugin")
+end, { force = true })
 ```
-... In your vim rc, next to fzf ...
-Plug '/absolute/path/to/plugin/folder'
-```
 
-But while we are developing, we don't have to have it in either, we can just
-execute `:so %` (much like we did in our vim rc).
+While editing that **Lua file**, run `:luafile %`, then run `:CourseHello`.
+The notification confirms that your command registered. Edit the text, save
+with `:w`, run `:luafile %` again, and try `:CourseHello` again. The `force`
+option permits re-registering this one command during the experiment.
 
-#### Follow along!
-I'll create it now and you can follow along, PLEASE ASK QUESTIONS.
+The experiment lives in the ignored practice area. It is not added to your
+installed plugin list. `:help runtimepath` explains automatic plugin discovery;
+a reusable local plugin can later be added with a Lazy `dir` specification.
+This lesson needs neither Vim-Plug nor a second plugin manager.
 
+Original course/plugin-writing inspiration remains credited to ThePrimeagen and
+[Writing Vim Plugin by Łukasz Jan Niemier](https://vimways.org/2019/writing-vim-plugin/).

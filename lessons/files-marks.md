@@ -6,6 +6,9 @@ section: "Navigation"
 description: "Coconut oil in hand, you are ready to navigate some files with marks."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ## Marks
 
 Now marks are both incredible and also confusing at the same.  Effectively vim
@@ -13,10 +16,11 @@ gives you the ability to mark files both globally and locally.  This means with
 just a swift couple taps of the finger you could be in a file marked.  I find
 marks definitely the end game of file navigation, but they are hard to do well.
 
-So lets open up 3 files in `vim-nav-playground` and mark each one.  
+Run `./learn nav` from the course root. Its working directory is the prepared
+navigation project; open three files and mark each one.
 
 First lets open one file, `src/sockets.c`.  Use your favorite way to open up
-this file. 
+this file.
 
 ```
 :e src/sockets.c

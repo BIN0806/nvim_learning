@@ -6,9 +6,12 @@ section: "Advanced Text Manipulation"
 description: "And you thawght you knew Motions..."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 We have already covered some of the horizontal and vertical motions, `I`/`A`
 and `<count>j`/`k` are great examples of fast motions.  But if that is all we
-had, VIM would just be lacking in luster.  
+had, VIM would just be lacking in luster.
 
 ### Quick Recap
 Motion: A command that moves the cursor.
@@ -27,5 +30,5 @@ lets do an exercise and go over some advanced motions!
 
 #### Example time
 ```bash
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-6-motions.md > exercise.md && vim exercise.md
+./learn 6
 ```

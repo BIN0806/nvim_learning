@@ -6,6 +6,9 @@ section: "Misc Content"
 description: "Registers.  Definitely hard to imagine them not being hard."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### Register Basics
 So lets copy the following line
 
@@ -17,14 +20,14 @@ Notice that `foo` appears two times.  We are seeing foo twice because `foo` is
 in our first register and our implicit register.  Our first register is denoted
 with 0 (0th may be better term) and implicit is ".
 
-Paste with `p` 3 times 
+Paste with `p` 3 times
 
 foo
 foo
 foo
 
 highlight and yank all three `foo`s.  Lets resee what is in our `:reg`.  Notice
-that we replaced our implicit register and our 0th register.  
+that we replaced our implicit register and our 0th register.
 
 Why didnt 0 become 1?
 
@@ -35,6 +38,13 @@ Delete a few more lines and re-inspect your register.  What you should observe,
 and can be found in `:h reg` is that your implicit register `"` is _always_ the
 latest yank or delete.  It is also what is used when pasting.  We _knew_ this
 from our previous lesson, but now we observe why.
+
+### Your Visual paste behavior
+
+Normal-mode p/P and explicit registers behave as taught here. Your Visual-mode
+p replaces the selection while preserving the previously copied text, so it can
+be pasted repeatedly. A normal delete such as dd still updates delete registers.
+Use `:reg` to inspect the specific action you just performed.
 
 ### How do we interact with registers?
 We see how our actions are side effects to the state of the registers.  But
@@ -47,7 +57,7 @@ foofoofoo
 
 Now lets inspect our registers.
 
-How do we paste from a register?  
+How do we paste from a register?
 
 ### Lets do something crazy
 

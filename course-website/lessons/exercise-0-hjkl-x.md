@@ -5,8 +5,11 @@ order: "69A"
 section: "Misc Content"
 description: "This is the first exercise to try out."
 ---
+
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 ## NOTE
-To use the exercises, please curl the file to your machine and edit it with vim.
+Run `./learn 0` from the course root to edit a writable copy. Your previous copy is preserved.
 
 ## Exercise 0: Basic movement, h, j, k, l, w, b
 ### press j to go down

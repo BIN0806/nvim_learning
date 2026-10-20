@@ -6,22 +6,20 @@ section: "Navigation"
 description: "Coconut oil in hand, you are ready to navigate some files with e."
 ---
 
-### Recap
-Wow we have learned a lot!  Lets chat about what we have learned.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-* NetRW
-* `:e`
-* `<tab>` and `<C-d>`
-* `<C-p>` and `<C-n>` for navigating pop-up lists
-* remaps
-* marks
-* :Vex
-* so %
-  * more on %.  try typing `:echo expand("%")`  Or `"%p`  What happened here?
+## Navigation recap in your setup
 
-How are we feeling?  Do you feel like you have no more room to learn?  I get
-that we are sort of on information overload.  Lets take a break and just talk
-about what we have learned overall.
+- Space e opens/focuses nvim-tree; Ctrl+n toggles it.
+- `:edit path/to/file` opens a file directly.
+- Tab / Ctrl+d complete a colon command; Ctrl+p/Ctrl+n navigate completions.
+- Space f f finds files; Space f g finds Git files; Space f w searches text.
+- `mA` makes an uppercase file mark and `'A` jumps back to it.
+- Ctrl+h/j/k/l moves through windows and tmux panes.
+- ]q/[q jumps through quickfix entries; Space q o opens the list.
+- `:echo expand("%")` prints the current file name; `"%p` pastes that register.
+- Execute Lua experiments with `:luafile %`; restart after installed config changes.
 
-### Some Bonus
-Alternate File
+Remember that key behavior depends on mode and context. Normal-mode shortcuts
+are different from Insert-mode completion, Telescope or a terminal's input mode.

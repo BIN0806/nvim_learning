@@ -1,0 +1,99 @@
+#!/usr/bin/env python3
+"""Open this course using Billy's regular Neovim configuration and safe copies."""
+import argparse
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import sys
+import time
+
+ROOT = Path(__file__).resolve().parent
+PRACTICE = ROOT / ".practice"
+EXERCISES = {
+    "0": "exercise-0-hjkl-x.md",
+    "1": "exercise-1-dyp.md",
+    "2": "exercise-2-insert.md",
+    "3": "exercise-3-search-and-replace.md",
+    "4": "exercise-4-macros.md",
+    "5": "exercise-5-registers.md",
+    "6": "exercise-6-motions.md",
+    "js": "some-javascript.md",
+}
+PLUGIN = '''vim.api.nvim_create_user_command("CourseHello", function()
+  vim.notify("Hello from your practice plugin")
+end, { force = true })
+'''
+
+
+def exercise(number, reset=False):
+    if number not in EXERCISES:
+        raise ValueError("Choose an exercise from 0 through 6, or js")
+    target = PRACTICE / EXERCISES[number]
+    PRACTICE.mkdir(exist_ok=True)
+    if reset and target.exists():
+        backup = PRACTICE / "backups" / f"{target.name}.{time.time_ns()}"
+        backup.parent.mkdir(exist_ok=True)
+        shutil.copy2(target, backup)
+    if reset or not target.exists():
+        shutil.copy2(ROOT / "lessons" / target.name, target)
+    return target
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("target", nargs="?", default="guide",
+                        help="guide, list, 0..6, js, nav, plugin, lesson NAME, or reset NUMBER")
+    parser.add_argument("name", nargs="?")
+    parser.add_argument("--print", dest="preview", action="store_true",
+                        help="Prepare the copy and print the launch command without starting Neovim")
+    args = parser.parse_args()
+    if args.name is not None and args.target not in {"lesson", "reset"}:
+        raise ValueError("Unexpected extra argument")
+    cwd = ROOT
+    if args.target == "list":
+        for file in sorted((ROOT / "lessons").glob("*.md"),
+                           key=lambda p: int(re.search(r'^order: "(\d+)', p.read_text(), re.M)[1])):
+            title = re.search(r'^title: "(.+)"', file.read_text(), re.M)[1]
+            print(f"{file.stem:38} {title}")
+        return
+    if args.target == "guide":
+        target = ROOT / "README.md"
+    elif args.target in EXERCISES:
+        target = exercise(args.target)
+    elif args.target == "reset":
+        target = exercise(args.name, reset=True)
+    elif args.target == "lesson":
+        available = {p.stem: p for p in (ROOT / "lessons").glob("*.md")}
+        if args.name not in available:
+            raise ValueError("Unknown lesson; use ./learn list")
+        target = available[args.name]
+    elif args.target == "nav":
+        cwd = PRACTICE / "navigation"
+        target = cwd / "src/sockets.c"
+        if not target.is_file():
+            raise ValueError("Navigation fixtures are missing. Clone https://github.com/ThePrimeagen/vim-nav-playground.git into .practice/navigation")
+    elif args.target == "plugin":
+        target = PRACTICE / "plugin-demo/plugin/course_hello.lua"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if not target.exists():
+            target.write_text(PLUGIN)
+    else:
+        raise ValueError("Unknown target; use ./learn --help")
+    if not shutil.which("nvim"):
+        raise ValueError("Neovim is not on PATH")
+    compatibility = json.dumps(str(ROOT / ".learning/compat.lua"), ensure_ascii=False)
+    argv = ["nvim", "-c", "lua dofile(" + compatibility + ")", str(target)]
+    if args.preview:
+        print(json.dumps({"cwd": str(cwd), "argv": argv}, indent=2))
+        return
+    os.chdir(cwd)
+    os.execvp(argv[0], argv)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (ValueError, OSError) as error:
+        sys.exit("learn: " + str(error))

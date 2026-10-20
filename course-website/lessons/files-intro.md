@@ -6,30 +6,19 @@ section: "Navigation"
 description: "Coconut oil in hand, you are ready to navigate some files."
 ---
 
-As you imagined there is the "Vim" way to do everything.  But the good news is
-that there are many a plugin to make this process easier.  Lets start off by
-learning some built in vim ways and then expand from there.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-First, lets clone a small test repo
+This course's companion navigation project is ready under `.practice/navigation`.
+Start it from the course root:
 
-ssh
-```bash
-git clone git@github.com:ThePrimeagen/vim-nav-playground.git
+```sh
+./learn nav
 ```
 
-https
-```bash
-git clone https://github.com/ThePrimeagen/vim-nav-playground.git
-```
+The launcher opens `src/sockets.c` with the working directory set to the navigation
+project. Press **Space e** to open/focus your nvim-tree explorer, then use `j`, `k`
+and Enter to choose a directory or file.
 
-navigate to `vim-nav-playground` and open up vim by opening up the directory in
-vim.
-
-```bash
-cd vim-nav-playground
-vim .
-```
-
-This should be what you are seeing (bar the colorscheme)
-![NetRW](./images/netrw.png)
-
+Your setup uses nvim-tree. The upstream screenshots show NetRW, so their visual
+appearance differs; the adapted instructions below use your actual explorer.

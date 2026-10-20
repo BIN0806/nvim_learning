@@ -6,56 +6,18 @@ description: "Lets set some colorschemes"
 section: "The VimRC"
 ---
 
-So to change your `colorscheme` what should you do?
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-If you answered "Help Menu!" you are a fantastic!  Please execute `h:
-colorsc<tab><Cr>`
+Your theme is Catppuccin through NvChad/base46. Press **Space t h** to open
+NvChad's theme picker, use its displayed selection controls, and press Enter to
+choose a theme. The current theme preference lives in `lua/chadrc.lua` under
+your Neovim configuration directory.
 
-try executing the following
+For help, use `:help colorscheme` or `:help options`. In a colon command,
+Ctrl+d lists available completions and Tab cycles them. Ctrl+p/Ctrl+n are
+completion navigation keys there; Normal-mode file finding uses Space f f.
 
-```
-:colorscheme <C-d>
-```
-
-Pick anything that autocompletes!  Much like set options, it will only persist
-for this vim session.  Writing it to your vimrc and open up file you commonly
-edit and behold the beauty!
-
-These are not the only colorschemes that you can have.  Plenty of plugins
-provide many more.
-
-## Recap
-Ok.  This is probably getting a bit overwhelming.  A lot of this comes with
-practice and as you use this it becomes second nature.
-
-I'll say it again.
-* This is a journey, its not a day trip
-* The journey is uphill
-* The top of the mountain is incredible
-
-### What we learned
-* Using the help menu. 
-    * navigating the all the set options.
-    * Using tab and <C-d>
-    * Arrows vs <C-p> and <C-n>
-
-* Set options
-    * The power to control how our editor operates through sets.
-
-* Colorschemes
-    * How to set them and peruse them.
-
-* We learned things about motions.
-    * dd can become <count>dd
-    * Moving with 10j / 10k.  Wowow
-
-### Extend it
-Do you think you could do anything with `y` and `p`?  Could `yj` work?  What
-does it do?  Why?  What about `5p`?  What do you think happens?  Why?
-
-### Foundation
-We have built the foundation.  You know about customizing your vim experience
-and you know how to basically move around.  The only thing left is really
-optimizing!  And there is practically an infinite amount of optimizing!
-
-
+You can change many options for one buffer with `:setlocal`. These experiments
+are temporary unless saved in the relevant Lua config module. Keep your known
+working options and plugin declarations while learning one change at a time.

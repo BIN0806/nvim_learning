@@ -5,8 +5,11 @@ order: "70A"
 section: "Misc Content"
 description: "This is the basic movement and editing of text"
 ---
+
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 ## NOTE
-To use the exercises, please curl the file to your machine and edit it with vim.
+Run `./learn 1` from the course root to edit a writable copy. Your previous copy is preserved.
 
 ## Exercise 1: Basic Editing
 ### Delete a line with dd
@@ -46,5 +49,3 @@ What did we see there?
 yank this line
 
 What happened to the registers?
-
-

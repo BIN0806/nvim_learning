@@ -6,6 +6,9 @@ section: "Misc Content"
 description: "This is the first exercise to try out."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 // Delete the description.
 // That seems slow right?
 // <count>Delete
@@ -15,7 +18,7 @@ description: "This is the first exercise to try out."
 // But we have a problem down we?
 function foo(a, b, c) {
 	switch (a) {
-		case 1: 
+		case 1:
 			return b + c;
 			break;
 		default:
@@ -28,4 +31,3 @@ function foo(a, b, c) {
 if (true) {
 	console.log(foo(1, 5, 7));
 }
-

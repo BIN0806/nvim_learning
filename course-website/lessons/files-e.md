@@ -6,6 +6,9 @@ section: "Navigation"
 description: "Coconut oil in hand, you are ready to navigate some files with e."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 There are other ways to open files in vim.  You are not restricted to just
 using the file tree.  There is also `:e`. `e` is short for `edit`.
 
@@ -16,7 +19,7 @@ Lets reopen back up our `vim-nav-playground` project.
 
 lets type `:e <ctrl-d>`.  You should see the following
 
-![Edit and Ctrl+D](lessons/images/edit-ctrl-d.png)
+![Edit and Ctrl+D](./images/edit-ctrl-d.png)
 
 There is also tab completion!  Try it out. `:e <tab>`.  But how do we navigate
 the popup list?  Well there are two options.  There is the vim way, and the

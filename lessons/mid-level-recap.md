@@ -6,11 +6,14 @@ section: "Recap"
 description: "There has been a lot of info.  Lets recap!"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### The Recap Recap
 
 #### Navigation
-* What are some questions and thoughts?  
-* What do you think is the hardest part?  
+* What are some questions and thoughts?
+* What do you think is the hardest part?
 * What part surprised you the most?
 * How do you feel about modes?
 * Do you feel that deep down excitement?
@@ -26,4 +29,3 @@ description: "There has been a lot of info.  Lets recap!"
 * Marks are pretty OP
 * File tree is a bit lacking.
 * That telescope fuzzy finder though, huh?
-

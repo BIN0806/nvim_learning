@@ -6,6 +6,9 @@ section: "Advanced Text Manipulation"
 description: "There has been a lot of info.  Lets recap!"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### The Recap Recap
 
 #### Basic Movements

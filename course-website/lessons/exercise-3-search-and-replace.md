@@ -6,6 +6,9 @@ section: "Misc Content"
 description: "Search and Replace!"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### Basic Search
 search for `error` by typing `/error<CR>`
 
@@ -28,7 +31,7 @@ errooentuhoneuhnoteuhnotehuor
 replace "foo" with "baz" by typing `:s/foo/baz<CR>`
 foo bar baz
 
-Try again but notice that it only replaces one foo at a time.  
+Try again but notice that it only replaces one foo at a time.
 foo foo foo foo
 
 replace "foo" with "baz" by typing `:s/foo/baz/g<CR>`
@@ -60,5 +63,4 @@ Lets execute `:%s/foo/bar/gc`, but first exit without saving `:q!` and reopen
 this file
 
 #### But what about full project find and replace
-I am going to leave this out of this course.  
-
+I am going to leave this out of this course.

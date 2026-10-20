@@ -6,13 +6,19 @@ section: "Introduction"
 description: "The gentle introduction into vim that will blow your mind and cover you in coconut oil."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### Motivation
 
 Often its the little choices in our lives.
 
 ### Welcome to Vim
 
-#### But first, lets meet ED
+#### Optional historical demonstration: ED and ex
+
+These shell demonstrations introduce Vim’s predecessors. Use `nvim` and `./learn`
+for the actual course so your installed shortcuts apply.
 
 ```bash
 > ed my-file.ts
@@ -83,7 +89,7 @@ You may feel confused, so ask questions.
 
 ## Who Am I?
 * I make youtube videos about Vim
-* I stream on twitch 
+* I stream on twitch
     * NeoVim Plugins
     * Vim Deathmatch.  A battle royale like vim plugin to battle for fastest
       vim editing skallz (lua + docker)
@@ -101,7 +107,7 @@ You may feel confused, so ask questions.
 * Unix System as I cannot help you if you are on windows and you experience and
   problems.  I suggest Plebuntu
 * typing skills will directly affect your experience.
-* `git clone https://github.com/ThePrimeagen/vim-nav-playground.git`
+* The navigation project is already prepared: use `./learn nav` from this repository.
 
 ## Flavors of vim
 * VIM - Vi IMproved
@@ -123,5 +129,3 @@ You may feel confused, so ask questions.
   * Learning lua plugin dev
   * VimRC
 * `:h usr<tab>`
-
-

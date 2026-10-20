@@ -1,3 +1,159 @@
+# vim — Billy’s Vim learning course
+
+Local adaptation of [ThePrimeagen/vim-fundamentals](https://github.com/ThePrimeagen/vim-fundamentals)
+at `aed0a14`, prepared October 20, 2026. Original author credit and licenses are
+retained below. Adaptations map the lessons to your existing NvChad configuration.
+
+## Start here
+
+```sh
+cd "/Users/billy/Documents/ChatGPT/HATE/vim learning/vim"
+./learn
+```
+
+This opens this guide in your regular Neovim. Choose an exercise with `./learn 0`
+through `./learn 6`; practice edits live under `.practice/`, separate from the
+source lessons. Run `./learn lesson basic-usage` for a reading lesson, `./learn list`
+for the lesson names, `./learn nav` for C file navigation, and `./learn plugin`
+for a local Lua experiment. No website build or npm installation is required.
+`./learn js` opens a writable copy of the JavaScript sample used in the settings
+lesson. `./learn reset js` resets that copy with the same backup protection.
+
+`./learn reset 0` makes a fresh exercise-0 copy and backs up the previous copy
+under `.practice/backups/`. Opening an exercise normally keeps your progress.
+`--print` prepares the copy and shows the command without launching Neovim.
+
+The launcher keeps your normal editor configuration. Inside this repository it
+turns off format-on-save, wrapping, spell display, concealment and folding so
+ASCII diagrams and text exercises keep their shape. Reference lessons open
+read-only; practice copies remain writable. Your configuration and unrelated
+projects are unaffected by those process-local presentation adjustments.
+
+## A practical learning path
+
+Read a lesson, quit back to your shell, then launch its exercise. The `./learn`
+commands run in the shell; colon commands and editing keys run inside Neovim.
+You can also keep a reading window beside a separate practice window.
+
+| Exercise | Practice | What you gain |
+| --- | --- | --- |
+| 0 | h/j/k/l, w/b, x | Move precisely and remove a character. |
+| 1 | dd, yy, p/P, v/V, y/d | Delete, copy, paste and select text. |
+| 2 | i/a, I/A, o/O, Esc | Start typing at the right place with fewer movements. |
+| 3 | /pattern, n/N, :s/old/new/g | Find text and replace it in a chosen range. |
+| 4 | qa … q, @a, @@, 3@a | Record an edit, stop recording, replay it or repeat it three times. |
+| 5 | :reg, "ayy, "ap | Inspect stored text and choose a named copy register. |
+| 6 | f/t/F/T, Space ;, %, di{, counts | Combine operators with more precise movements and text objects. |
+
+For a first macro, use three disposable lines. At the start of the first line,
+type `qa0xjq`: `qa` records into register a, `0x` deletes its first character,
+`j` moves down, and `q` stops. `2@a` applies the same edit to the next two lines.
+Use u to undo, then practice on the supplied macro exercise. Registers holding
+macros are also text registers, so avoid yanking into a while it holds that macro.
+
+Save progress with `:w`, then quit with `:q`. Add one learned motion to real work
+at a time; repeat an exercise when the movement stops feeling deliberate.
+
+## Keys you will actually use
+
+Press Esc before Normal-mode shortcuts. `<leader>` means Space; key sequences
+are typed in order. `<C-k>` means hold Control and press k. Case matters.
+
+| Action | Your keys / command |
+| --- | --- |
+| Move and edit text | Native h/j/k/l, w/b, dd, yy, p/P, i/a/o/O, u, Ctrl+r. |
+| Leave Insert mode | Esc; your existing jk shortcut also works. |
+| Open/focus explorer | Space e; Ctrl+n toggles it. |
+| Find files / Git-tracked files | Space f f / Space f g. |
+| Search project text | Space f w. |
+| Next / previous quickfix result | ]q / [q, after populating a list. |
+| Open / close quickfix | Space q o / Space q c. |
+| Move between windows and tmux panes | Ctrl+h/j/k/l; Ctrl+w then h/j/k/l also works. |
+| Find/till character again | Space ; repeats f/F/t/T; comma reverses. |
+| Open command mode | Colon; your existing semicolon shortcut stays available. |
+| Save / quit | :w / :q; :q! explicitly discards unsaved changes. |
+| Inspect plugins / choose a theme | :Lazy / Space t h. |
+| Open home dashboard | Space u d. |
+| Execute a Lua experiment | :luafile % while an actual Lua file is current. |
+
+The new Space ; and quickfix shortcuts are installed in your normal mappings,
+so they also work outside the learning launcher. The built-in motions remain
+available. Ctrl+d/u and n/N additionally center your viewport. Visual p preserves
+your copied register; normal deletes and explicit registers retain their roles.
+The course uses `nvim`, not the separate system `vim` executable.
+
+## What was adapted
+
+- Both `lessons/` and `course-website/lessons/` teach the same updated keys.
+- NetRW instructions use your nvim-tree explorer.
+- Vim-Plug/FZF instructions use Lazy/Telescope, already installed.
+- Old vimrc/init.vim replacement steps use the actual Lua module layout.
+- The old Ctrl+k/Ctrl+j quickfix keys now use ]q/[q, preserving pane navigation.
+- Semicolon repeat uses Space ;, preserving your semicolon command-mode mapping.
+- Exercises use local copies instead of downloading unadapted upstream text.
+- Formatting is disabled for course buffers, and register/paste differences are
+  called out where they matter.
+- The installed completion plugin has a macro guard: it skips its injected
+  InsertEnter callback during macro recording/replay. This fixes lost inserted
+  keys while keeping normal Insert-mode completion initialization available.
+
+Navigation fixtures come from [ThePrimeagen/vim-nav-playground](https://github.com/ThePrimeagen/vim-nav-playground),
+commit `7d58a0d`, cloned under `.practice/navigation`. It is an independent ignored
+practice checkout. The original configuration-stashing scripts are not used.
+
+A shortcut needs its normal context: quickfix navigation needs entries; Git-file
+search needs a Git project; a character search needs that character on the line.
+The runtime checks exercise those real contexts instead of only inspecting maps.
+
+## Local history and verification
+
+Your adapted course is on `codex/billy-keybindings`, with a local checkpoint tag
+`course-2026-10-20-billy`. `master` retains the original upstream snapshot.
+The upstream remote remains ThePrimeagen’s repository; these adaptations are
+saved locally. `.practice/` and its backups stay out of commits.
+
+From this folder, run `python3 .learning/check.py` for lesson/launcher checks.
+After `./learn plugin --print`, run
+`nvim --headless -i NONE -n -c 'luafile .learning/check.lua'` for the 13 integration
+checks against the installed full Neovim profile. The settings repository’s
+README records the global mapping changes and settings restore tag separately.
+
+## Lesson index
+
+- [Introduction](lessons/intro.md)
+- [The Terminology](lessons/terminology.md)
+- [Are You Ready?](lessons/are-you-ready.md)
+- [Opening Vim](lessons/opening-vim.md)
+- [Using Vim](lessons/basic-usage.md)
+- [Vim My Way](lessons/vim-my-way.md)
+- [Color My Pencils](lessons/color-my-pencils.md)
+- [Files and Navigations](lessons/files-intro.md)
+- [Files and Navigations - nvim-tree](lessons/files-netrw.md)
+- [Files and Navigations - Remaps part 1](lessons/files-remaps-1.md)
+- [Files and Navigations - Remaps part 2](lessons/files-remaps-2.md)
+- [Files and Navigations - Edit](lessons/files-e.md)
+- [Files and Navigations - Marks](lessons/files-marks.md)
+- [Files and Navigations - Recap](lessons/files-recap.md)
+- [Pit Stop](lessons/mid-level-recap.md)
+- [Plugins](lessons/plugins.md)
+- [Quickfix Intro](lessons/quickfix.md)
+- [Search And Replace](lessons/advanced-text-manipulation-1.md)
+- [Macros](lessons/advanced-text-manipulation-2.md)
+- [Registers](lessons/advanced-text-manipulation-3.md)
+- [Pit Stop](lessons/adv-pitstop.md)
+- [Advanced Motions](lessons/advanced-movements-1.md)
+- [First Plugin](lessons/first-plugin.md)
+- [hjkl-x](lessons/exercise-0-hjkl-x.md)
+- [dyp](lessons/exercise-1-dyp.md)
+- [insert](lessons/exercise-2-insert.md)
+- [some javascript](lessons/some-javascript.md)
+- [Search and Replace](lessons/exercise-3-search-and-replace.md)
+- [Macros](lessons/exercise-4-macros.md)
+- [Registers](lessons/exercise-5-registers.md)
+- [Advanced Motions](lessons/exercise-6-motions.md)
+
+## Original course attribution
+
 <h1 align="center"><a href="https://frontendmasters.com/courses/vim-fundamentals/">VIM Fundamentals Course by ThePrimeagen</a></h1> <br>
 
 <p align="center">

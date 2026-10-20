@@ -6,6 +6,9 @@ section: "Misc Content"
 description: "Motions 201"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### Change
 `c` is a powerful motion.  You use it just like `d` but at the end of the
 motion you are ejected from `NORMAL` and into `INSERT`.
@@ -19,18 +22,23 @@ Lets see the difference
 // cc this line
 
 ### Horizontal Movement
-Lets learn about!: `_`, `0`, `$`, `D`, `C`, `S`, `f`, `,`, `;`, `t`, `F`, and `T`
+Lets learn about!: `_`, `0`, `$`, `D`, `C`, `S`, `f`, `,`, `Space ;`, `t`, `F`, and `T`
 
 // How would we move around on the line with "contents"
 if (true) {
     contents conTenTs contenTS
 }
 
+Your Normal-mode `;` opens command mode. **Space ;** repeats the last f/F/t/T
+search in its original direction; `,` repeats in reverse. For example, on
+`a.b.c.d`, place the cursor on `a`, type `f.`, then Space ; to reach the next dot.
+Ctrl+d/Ctrl+u keep their scrolling behavior and also center the viewport.
+
 ### Vertical Movement
 #### Core movement
 Rely on relative jumps.  Get good at them.
 
-If you get NeoVim, try VimBeGood
+You are already using Neovim; these drills work with your installed setup.
 
 #### { and }
 We know about search.  That is a vertical movement, but its really specific.

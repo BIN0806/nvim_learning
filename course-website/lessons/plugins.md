@@ -6,109 +6,31 @@ section: "Plugins"
 description: "Lets beef up the RC!"
 ---
 
-Plugins!
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-Yes vim does get better.
+## Your plugin manager is already installed
 
-Yes, that not so pretty language VimL is a primary vehicle in making things
-nice.  In NeoVim you can use Lua, which is quite nice.  Especially when you
-consider that there is a Typescript -> lua converter.  Which means you can use
-a typed language and get type completion and create vim plugins.  42069IQ
+Your setup uses **Lazy**. Run `:Lazy` to inspect the plugin list. Fuzzy finding
+is supplied by **Telescope**, already installed; no Vim-Plug or FZF installation
+is needed for this local course.
 
-### Get a Plugin Manager
-Plug!
+Run `./learn nav`, then try:
 
-Lets follow the instructions together getting
-[Plug](https://github.com/junegunn/vim-plug) vim plugin manager installed
+| Keys / command | Actual action |
+| --- | --- |
+| Space f f | Find files under the current project directory. |
+| Space f g | Find Git-tracked files; use it inside this Git project. |
+| Space f w | Search project text. |
+| Space f b | Switch open buffers. |
+| :Lazy | Open the plugin manager. |
 
+In a Telescope picker, type to filter, use Ctrl+n/Ctrl+p or the arrow keys, and
+press Enter to open the selected result. Esc closes or leaves the picker mode.
+Ctrl+p in Normal mode is not the file-search shortcut in your setup.
 
-```
-... plays waiting music ...
-```
-
-### File Navigation 2.0
-Let's add a fuzzy finder, remap some things, and make it work for us.  We are
-going to use FZF even though I Use telescope personally.  The reason for this
-is because Telescope is neovim specific (lua) and wont work with Vim.  Where as
-FZF has been working for some time with vim.
-
-Lets add the following lines to your vimrc
-
-```viml
-call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-call plug#end()
-```
-
-Our vimrc should look something like the following.
-
-```viml
-set scrolloff=8
-set number
-set relativenumber
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-call plug#end()
-
-" This was from the colorscheme section
-colorscheme desert
-
-" Our remaps
-let mapleader = " "
-nnoremap <leader>pv :Vex<CR>
-nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-```
-
-Lets source our vimrc
-
-```viml
-" or use your sweet remap
-:so %
-```
-
-Now we need to execute our plugin manager.
-
-```viml
-:PlugInstall
-```
-
-### WARNING
-### My Vim Colorscheme is just a default one, its ugly
-
-Once you do this you should see the following menu
-
-![Plug Result](./images/plug-install.png)
-
-Now we can execute `:GFiles`, lets give it a try in `vim-nav-playground`.
-
-![FZF Result](./images/fzf-results.png)
-
-### WHAT HAVE I TAUGHT YOU?
-What should we do now?
-
-* M A K E _ A _ R E M A P
-
-```viml
-nnoremap <C-p> :GFiles<CR>
-```
-
-### Lets get a better colorscheme.
-ayu or gruvbox??
-
-### Recap
-* We got a plugin manager that makes installing plugins easy!  You just need
-  the path on github to install new ones.
-
-* We installed FZF, made a remap! then showed how awesome it is.
-
+Plugin declarations live in `lua/plugins/init.lua` under your Neovim config.
+Existing options live in `lua/configs/`. When deliberately adding a plugin,
+append a compatible Lazy specification, restart Neovim, and use `:Lazy` to
+inspect installation. The first-plugin lesson uses a local Lua experiment and
+requires no package-manager change.

@@ -6,6 +6,9 @@ description: "This goes over some basic vocabulary that will be used"
 section: "Introduction"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ## Files, Buffers, Windows, Splits, and Tabs
 We all know what files are (or so you think [LiveOverflow's Video on
 Files](https://www.youtube.com/watch?v=VVdmmN0su6E)) but there is a bit more

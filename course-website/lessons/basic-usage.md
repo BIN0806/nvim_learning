@@ -6,12 +6,15 @@ description: "Let's use vim for the first time!"
 section: "Basics"
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 Before we start editing files, lets get familiar with some basic movements.
 
-Navigate back to the empty directory and type in the following.
+From the course root, open your Insert-mode practice copy:
 
 ```bash
-> vim test.js
+./learn 2
 ```
 
 You are now in `NORMAL` mode.  This probably doesn't feel all that normal.
@@ -22,7 +25,7 @@ There are a few modes that you should be aware of.
 
 * Normal
 * Insert
-* Visual 
+* Visual
 * Visual Line
 
 ## My First If Statement
@@ -32,8 +35,8 @@ Currently, you are in `NORMAL` mode.  This is where you can execute commands
 to navigate, edit, and execute vim/sys commands.  To get out of this mode,
 press `i`
 
-After pressing `i` you should see something like `-- INSERT --` in the bottom
-left hand side of vim.
+After pressing `i`, your NvChad statusline indicates Insert mode. Automatic
+pairs may add a closing bracket for you; type normally and observe the cursor.
 
 Now that you are in insert mode, type the following
 
@@ -46,17 +49,18 @@ if (true) {
 Press `<esc>` or `<Ctrl-c>` (abbreviated `<C-c>`) to leave `INSERT` mode and back
 to `NORMAL`.
 
-Goodness, isn't default vim ugly?
+Your existing Catppuccin/NvChad interface stays available throughout.
 
-type `:q` to quit vim.  Also, don't tell anyone.
+Type `:w` to save your practice copy, then `:q` to quit. `:q!` deliberately
+discards unsaved changes; plain `:q` warns when you have edits to save.
 
 ## My First Moves
 ### Basic navigation
 
-time to curl down our first little exercise
+Open the local movement exercise:
 
 ```bash
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-0-hjkl-x.md > exercise.md && vim exercise.md
+./learn 0
 ```
 
 ### Deleting, Yanking, and Pasting
@@ -65,14 +69,14 @@ where you will see some significant speed ups compared to a conventional editor.
 
 
 ```bash
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-1-dyp.md > exercise.md && vim exercise.md
+./learn 1
 ```
 
 ### Insert!
 We are going to go over entering into insert mode
 
 ```bash
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-2-insert.md > exercise.md && vim exercise.md
+./learn 2
 ```
 
 ## Recap

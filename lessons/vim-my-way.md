@@ -6,80 +6,34 @@ description: "Ok, so vim looked pretty ugly.  Lets make it feel the way we want 
 section: "The VimRC"
 ---
 
-Ok, how much did you hate having to do the `zz`?  It is annoying.  Instead,
-lets tell vim to do it for us.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-```viml
-:set scrolloff=8
+## Configure Vim behavior using your actual Neovim setup
+
+Try these temporary commands in an exercise buffer:
+
+```vim
+:setlocal scrolloff=8
+:setlocal number
+:setlocal relativenumber
+:setlocal norelativenumber
 ```
 
-Now lets scroll around.  How does it feel.  SO GOOD.
+Relative numbers help with commands such as `10j`, `5k` and `v10j`. `V` selects
+whole lines; Esc returns to Normal mode. Your scrolling/search mappings already
+keep the view centered with Ctrl+d, Ctrl+u, n and N.
 
-----
+For the JavaScript example, open it with:
 
-Lets quit out of our previous vim experience and curl down this file.
-
-```
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/some-javascript.md > exercise.js && vim exercise.js
-```
-
-After following the delete instructions you should notice that its really hard
-to count how many lines of code huh? Type the following
-
-```viml
-:set number
+```sh
+./learn js
 ```
 
-You will notice a new column has been added and now you have line numbers!
-Yeah its pretty easy to a jump, but also not all that easy.  Math can be hard
-sometimes.
+This is a writable practice copy; the reference sample stays intact. Your persistent options already live in `lua/options.lua`
+under `:echo stdpath("config")`; C/C++ indentation is additionally set by its
+filetype rule. Lua options look like `vim.opt.scrolloff = 8`. Inspect the existing
+file instead of creating a second .vimrc or init.vim.
 
-
-```viml
-" sets relative numbers
-:set relativenumber
-
-" turns off relative numbers
-:set norelativenumber
-```
-
-Wow.  Much better huh?  You can jump easily now.  You may not be good at
-jumping yet, but you can see its a lot easier.  Lets play around.  
-
-Put your cursor on `foo` and press `v10j`.  What happened?  Press `V` to
-highlight the whole line.
-
-Ok lets leave vim, `:q` and reopen back up the file either by reexecuting the
-curl command or simply executing `vim exercise.js`
-
-What happened?
-
-Commands you execute only live for the session you have vim open.  This is
-painful right?  Well, actually not.  There is a `.vimrc`!  All is not horrible.
-So lets create one!
-
-Create a vimrc in the correct location with the following content.
-
-```viml
-set scrolloff=8
-set number
-set relativenumber
-```
-
-Open up vim again.  Ohh yeah!  This is great, but those tabs have to go (tabs
-vs spaces anyone?)!  Add these lines to your vimrc and restart vim.
-
-```viml
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-```
-
-Now restart vim... what just happened?  Pretty cool huh?
-
-### How do you know what is available?
-* You can google.  Sometimes that is a good thing.
-* `h options`
-* `h <tabcomplete or ctrl-d>`
-* `h <specific option name>`
+Help remains available with `:help options` and `:help scrolloff`. In the command
+line, Ctrl+d lists completions; this differs from Normal-mode Ctrl+d scrolling.

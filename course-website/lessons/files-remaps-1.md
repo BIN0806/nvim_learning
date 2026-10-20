@@ -3,41 +3,32 @@ path: "/files-remaps-1"
 title: "Files and Navigations - Remaps part 1"
 order: "13A"
 section: "Navigation"
-description: "Coconut oil in hand, you are ready to navigate some files with NetRW."
+description: "Coconut oil in hand, you are ready to navigate some files with nvim-tree."
 ---
 
-First, lets quit our current vim experience and re-open up our vimrc.
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
 
-```bash
-# for vim
-vim ~/.vimrc
-```
+## Find the configuration you actually use
 
-```bash
-# for neovim - this may be different depending on your flavor
-vim ~/.config/nvim/init.vim
-```
+Inside Neovim, run:
 
-If your path is different for neovim but you don't know what it is, execute the
-following in neovim to expose the path!!!
-```viml
-" Neovim only
+```vim
 :echo stdpath("config")
+:lua vim.cmd.edit(vim.fn.stdpath("config") .. "/lua/mappings.lua")
 ```
 
-If you didn't save everything from the vim rc section, here is the complete
-vimrc thus far from [Vim My Way](/vim-my-way) and [Color My
-Pencils](/color-my-pencils).
+Your editor uses Lua modules rather than init.vim or ~/.vimrc:
 
-```viml
-set scrolloff=8
-set number
-set relativenumber
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+| File under the config directory | Purpose |
+| --- | --- |
+| init.lua | Startup and plugin bootstrap. |
+| lua/mappings.lua | Your custom keys. |
+| lua/options.lua | Numbers, scrolling and editing preferences. |
+| lua/chadrc.lua | Theme and dashboard preferences. |
+| lua/plugins/init.lua | Lazy plugin declarations. |
+| lua/configs/ | Individual plugin/language settings. |
 
-" This was from the colorscheme section
-colorscheme desert
-```
+Relative numbers and scrolloff are already configured. Read the files to see
+how they work; this lesson does not require replacing them with an old sample
+vimrc. Use `./learn plugin` for an editable Lua experiment kept in this repo.

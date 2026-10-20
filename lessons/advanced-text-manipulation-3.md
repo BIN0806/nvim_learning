@@ -6,6 +6,9 @@ section: "Advanced Text Manipulation"
 description: "Registers.  Definitely hard to imagine them not being hard."
 ---
 
+> Local edition for Billy’s NvChad keys. Read the repository README first;
+> launch writable exercises with `./learn 0` through `./learn 6`.
+
 ### My slogan for registers
 
 > Definitely hard to imagine them not being hard.
@@ -18,5 +21,5 @@ The `value` is a string
 
 #### Example time
 ```bash
-curl https://raw.githubusercontent.com/ThePrimeagen/vim-fundamentals/master/course-website/lessons/exercise-5-registers.md > exercise.md && vim exercise.md
+./learn 5
 ```
