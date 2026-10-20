@@ -11,6 +11,10 @@ description: "Coconut oil in hand, you are ready to navigate some files with nvi
 
 ## Find the configuration you actually use
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The original opened an init.vim or vimrc. These commands find the active Neovim
+> directory and open lua/mappings.lua, where your custom bindings belong.
+
 Inside Neovim, run:
 
 ```vim

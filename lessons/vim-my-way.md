@@ -11,6 +11,10 @@ section: "The VimRC"
 
 ## Configure Vim behavior using your actual Neovim setup
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The original customized a vimrc. Your persistent options belong in lua/options.lua, and
+> these setlocal experiments only affect this buffer. No new key mapping is needed.
+
 Try these temporary commands in an exercise buffer:
 
 ```vim
@@ -20,9 +24,17 @@ Try these temporary commands in an exercise buffer:
 :setlocal norelativenumber
 ```
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** Ctrl+d/u and n/N keep their native scrolling/search actions and additionally center your
+> view in this profile.
+
 Relative numbers help with commands such as `10j`, `5k` and `v10j`. `V` selects
 whole lines; Esc returns to Normal mode. Your scrolling/search mappings already
 keep the view centered with Ctrl+d, Ctrl+u, n and N.
+
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The JavaScript sample now opens as a writable local copy with ./learn js, leaving the
+> reference intact.
 
 For the JavaScript example, open it with:
 

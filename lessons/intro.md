@@ -104,6 +104,13 @@ You may feel confused, so ask questions.
 * You wish to defeat complacency
 
 ## Prereqs
+
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The original asks you to clone the navigation
+> playground yourself. It is already prepared here; use ./learn nav below.
+> The earlier ed/ex examples demonstrate separate historical editors; your
+> Neovim mappings apply to the main course launched with ./learn.
+
 * Unix System as I cannot help you if you are on windows and you experience and
   problems.  I suggest Plebuntu
 * typing skills will directly affect your experience.

@@ -29,6 +29,40 @@ ASCII diagrams and text exercises keep their shape. Reference lessons open
 read-only; practice copies remain writable. Your configuration and unrelated
 projects are unaffected by those process-local presentation adjustments.
 
+## Reading the instruction comments
+
+The notes are visible Markdown callouts, placed **before the affected
+instruction**. They stay visible when reading the file directly in Neovim and
+when viewing rendered Markdown.
+
+| Label | What it means |
+| --- | --- |
+| **CHANGED FOR YOUR SETUP** | The note identifies the original behavior, your replacement and why it changed. |
+| **ALREADY BOUND** | You can use the shown shortcut now. Commented definitions are recovery examples. |
+| **BINDING NEEDED — ONLY FOR AN OPTIONAL SHORTCUT** | The colon command works already; the proposed shortcut is unassigned until you add the commented mapping. |
+| **Built-in / unchanged** | Vim supplies the action directly; it does not need a custom key mapping. |
+
+There are no known missing required course shortcuts in the reviewed full
+profile. The optional examples are **Space l r** for reloading a saved Lua
+experiment and **Space l h** for the demo’s CourseHello command. Neither optional
+mapping is installed automatically. Both are explained immediately before their
+instructions in [Remaps part 2](lessons/files-remaps-2.md) and
+[First Plugin](lessons/first-plugin.md).
+
+To use a commented binding recipe, find your actual configuration with
+`:echo stdpath("config")`, open its `lua/mappings.lua`, and append the selected
+recipe there. Remove `-- ` only from the mapping lines, leaving explanatory
+comments commented out. Save and restart Neovim, then use `:verbose nmap <Space>lr`
+or `:verbose nmap <Space>lh` to inspect the result. In a different profile, check
+those keys first and choose an unused sequence if they are already assigned.
+Do not paste a mapping into a Markdown lesson. Ordinary commands such as :w,
+:edit, :reg and :help do not require custom bindings.
+
+Existing practice copies keep your edits. Notes were merged into the existing
+exercise-0 copy with a backup under `.practice/backups/`; no exercise was reset.
+If a future copy has older instructions, read its current source with
+`./learn lesson exercise-0-hjkl-x`, substituting the lesson name you need.
+
 ## A practical learning path
 
 Read a lesson, quit back to your shell, then launch its exercise. The `./learn`
@@ -82,20 +116,30 @@ available. Ctrl+d/u and n/N additionally center your viewport. Visual p preserve
 your copied register; normal deletes and explicit registers retain their roles.
 The course uses `nvim`, not the separate system `vim` executable.
 
-## What was adapted
+## What changed from the original course
 
-- Both `lessons/` and `course-website/lessons/` teach the same updated keys.
-- NetRW instructions use your nvim-tree explorer.
-- Vim-Plug/FZF instructions use Lazy/Telescope, already installed.
-- Old vimrc/init.vim replacement steps use the actual Lua module layout.
-- The old Ctrl+k/Ctrl+j quickfix keys now use ]q/[q, preserving pane navigation.
-- Semicolon repeat uses Space ;, preserving your semicolon command-mode mapping.
-- Exercises use local copies instead of downloading unadapted upstream text.
-- Formatting is disabled for course buffers, and register/paste differences are
-  called out where they matter.
-- The installed completion plugin has a macro guard: it skips its injected
-  InsertEnter callback during macro recording/replay. This fixes lost inserted
-  keys while keeping normal Insert-mode completion initialization available.
+Each row links to instructions with a **CHANGED FOR YOUR SETUP** comment. These
+are setup-specific substitutions; the original course history remains on master.
+
+| Area | Original course | Your version and reason |
+| --- | --- | --- |
+| [Preparation](lessons/are-you-ready.md) | Clean Vim environment / config-stashing preparation. | Keep the installed NvChad profile so practice matches everyday editing. |
+| [Exercise launch](lessons/basic-usage.md) | Vim plus downloads of upstream exercises. | ./learn makes writable local copies containing these annotations. |
+| [Configuration](lessons/files-remaps-1.md) | vimrc/init.vim and Vimscript mappings. | Existing lua/mappings.lua, lua/options.lua and related modules. |
+| [Theme](lessons/color-my-pencils.md) | :colorscheme and a vimrc preference. | Already-bound Space t h and NvChad/base46’s lua/chadrc.lua. |
+| [Explorer](lessons/files-netrw.md) | NetRW, :Vex and Space p v. | Already-bound Space e / Ctrl+n and nvim-tree. |
+| [File search](lessons/plugins.md) | Vim-Plug/FZF and a Ctrl+p example. | Existing Lazy/Telescope with Space f f/f g/f w/f b; no duplicate manager. |
+| [Quickfix](lessons/quickfix.md) | Shell-dependent :grep; Ctrl+k/j/e quickfix mappings. | :vimgrep fixtures; ]q/[q and Space q o/q c preserve pane navigation and scrolling. |
+| [Character-find repeat](lessons/exercise-6-motions.md) | Plain semicolon repeats f/F/t/T. | Space ; repeats; plain semicolon retains command entry. Already bound. |
+| [Reloading](lessons/files-remaps-2.md) | Space+Enter sources init.vim. | Save/restart full config. :luafile % runs a saved Lua experiment; Space l r is an optional unbound shortcut. |
+| [Visual paste](lessons/exercise-5-registers.md) | Default Visual paste register behavior. | Your Visual p preserves copied text for repeated replacements. Already configured. |
+| [Viewport](lessons/exercise-3-search-and-replace.md) | Native scroll/search motions. | Same motions plus centering for Ctrl+d/u and n/N; smartcase/search-highlight preferences remain. |
+| [Plugin experiment](lessons/first-plugin.md) | Runtime-path setup and a Vim-Plug development entry. | ./learn plugin plus :luafile % and :CourseHello. Space l h is an optional unbound shortcut. |
+| [Macros](lessons/exercise-4-macros.md) | Native recording/replay. | Same keys, with the installed completion guard protecting recorded inserted text. |
+| [Practice presentation](lessons/opening-vim.md) | Plain Vim exercise buffers. | Process-local literal display, no automatic formatting, read-only references and writable copies. |
+
+Both lesson trees contain identical annotations. The comments show optional
+binding recipes and recovery definitions without silently adding more shortcuts.
 
 Navigation fixtures come from [ThePrimeagen/vim-nav-playground](https://github.com/ThePrimeagen/vim-nav-playground),
 commit `7d58a0d`, cloned under `.practice/navigation`. It is an independent ignored
@@ -108,7 +152,8 @@ The runtime checks exercise those real contexts instead of only inspecting maps.
 ## Local history and verification
 
 Your adapted course is on `codex/billy-keybindings`, with a local checkpoint tag
-`course-2026-10-20-billy`. `master` retains the original upstream snapshot.
+`course-2026-10-20-notes`. The earlier `course-2026-10-20-billy` tag preserves
+this adaptation before inline annotations. `master` retains the original upstream snapshot.
 The upstream remote remains ThePrimeagen’s repository; these adaptations are
 saved locally. `.practice/` and its backups stay out of commits.
 

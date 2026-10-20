@@ -12,6 +12,11 @@ section: "Introduction"
 This local edition follows ThePrimeagen's course using Billy's existing NvChad
 configuration. The goal is to build muscle memory in the editor you actually use.
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The original preparation used a clean Vim environment. Keep your installed NvChad
+> profile and use local practice copies instead; this preserves the shortcuts you want to
+> learn.
+
 1. Run `./learn` from the repository root to read the local guide.
 2. Run `./learn 0` to open a writable exercise copy.
 3. Run `./learn nav` for the companion navigation project, already cloned into

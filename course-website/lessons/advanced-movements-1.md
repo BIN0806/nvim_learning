@@ -29,6 +29,11 @@ Motion: A command that moves the cursor.
 lets do an exercise and go over some advanced motions!
 
 #### Example time
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The exercise download and Vim launch were replaced by a local ./learn copy so the
+> instruction text matches your settings. The built-in editing operations in this section
+> do not need extra bindings.
+
 ```bash
 ./learn 6
 ```

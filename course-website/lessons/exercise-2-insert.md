@@ -20,4 +20,8 @@ a: right side of cursor
 o: insert new line below line and go into insert mode
 O: insert new line above line and go into insert mode
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The listed insertion keys are built-in. Your jk shortcut also leaves Insert mode, and
+> automatic pairs may add a closing bracket when practicing code.
+
 lets play around

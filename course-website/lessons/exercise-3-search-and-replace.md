@@ -10,6 +10,11 @@ description: "Search and Replace!"
 > launch writable exercises with `./learn 0` through `./learn 6`.
 
 ### Basic Search
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The search/substitution commands are built-in. Your ignorecase/smartcase settings affect
+> letter case, n/N additionally center the view, and Esc clears highlighting. No custom
+> search binding is required.
+
 search for `error` by typing `/error<CR>`
 
 error
@@ -59,6 +64,10 @@ function foo() {
 }
 ```
 #### Full File
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** After quitting the practice buffer, reopen it from the course root with ./learn 3. Use
+> ./learn reset 3 only if you want a fresh copy; reset first backs up saved progress.
+
 Lets execute `:%s/foo/bar/gc`, but first exit without saving `:q!` and reopen
 this file
 

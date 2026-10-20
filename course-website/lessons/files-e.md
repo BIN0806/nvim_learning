@@ -15,6 +15,11 @@ using the file tree.  There is also `:e`. `e` is short for `edit`.
 Lets explore!  You can always read the help menu, `:h e` but we don't need to
 do that!
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** Start the prepared navigation project with ./learn nav from the course root. The
+> built-in :edit command and its command-line completion keys below are unchanged and do
+> not need custom bindings.
+
 Lets reopen back up our `vim-nav-playground` project.
 
 lets type `:e <ctrl-d>`.  You should see the following
@@ -30,6 +35,10 @@ Anywho, arrow keys work, but eww. `<C-p>` (Ctrl+p, remember this is vim
 syntax). and `<C-n>` mean previous and next respectively.
 
 ### Fuzzy find anyone?
+
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** Telescope is already installed in your profile. Its Normal-mode file shortcut is Space f
+> f; the Ctrl+p discussed above is command-line completion, not your file picker.
 
 Yes, please!  Of course there is a fuzzy finder, but those are installed as
 plugins.  We are not quite there, so let me just show you one of them.  It is

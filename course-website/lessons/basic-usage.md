@@ -11,6 +11,10 @@ section: "Basics"
 
 Before we start editing files, lets get familiar with some basic movements.
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The original started with a shell command opening test.js in Vim. Use the prepared
+> Insert-mode copy in your regular Neovim instead.
+
 From the course root, open your Insert-mode practice copy:
 
 ```bash
@@ -38,6 +42,10 @@ press `i`
 After pressing `i`, your NvChad statusline indicates Insert mode. Automatic
 pairs may add a closing bracket for you; type normally and observe the cursor.
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** Your statusline replaces the plain -- INSERT -- message, and automatic bracket pairs may
+> insert the closing delimiter. The i/a/o/O keys themselves are unchanged.
+
 Now that you are in insert mode, type the following
 
 ```js
@@ -57,6 +65,10 @@ discards unsaved changes; plain `:q` warns when you have edits to save.
 ## My First Moves
 ### Basic navigation
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The original downloaded exercise text. This launcher uses the adapted local lesson and
+> keeps a separate writable copy.
+
 Open the local movement exercise:
 
 ```bash
@@ -68,12 +80,19 @@ These are going to be some of your fundamental movements within vim.  This is
 where you will see some significant speed ups compared to a conventional editor.
 
 
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** Use the adapted local editing exercise instead of the original download-and-launch
+> command.
+
 ```bash
 ./learn 1
 ```
 
 ### Insert!
 We are going to go over entering into insert mode
+
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** Use the adapted local Insert-mode exercise; reopening it retains your earlier progress.
 
 ```bash
 ./learn 2

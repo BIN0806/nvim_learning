@@ -20,6 +20,11 @@ A macro simply plays text as motions, inputs, and commands.
 I remember my first macro like it was yesterday.....
 
 #### Example time
+> [!NOTE]
+> **CHANGED FOR YOUR SETUP.** The exercise download and Vim launch were replaced by a local ./learn copy so the
+> instruction text matches your settings. The built-in editing operations in this section
+> do not need extra bindings.
+
 ```bash
 ./learn 4
 ```
