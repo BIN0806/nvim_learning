@@ -6,8 +6,16 @@ retained below. Adaptations map the lessons to your existing NvChad configuratio
 
 ## Start here
 
+The launcher needs Python 3, `nvim` on PATH and the full
+[Billy Neovim profile](https://github.com/BIN0806/nvim_settings#profiles-installation-and-restore-points)
+for the custom keys described here. This repository contains the course and
+practice launcher; editor installation is documented in the settings repository.
+
+In an existing checkout, run `./learn` from the repository root. For a new checkout:
+
 ```sh
-cd "/Users/billy/Documents/ChatGPT/HATE/vim learning/vim"
+git clone https://github.com/BIN0806/nvim_learning.git vim
+cd vim
 ./learn
 ```
 
@@ -18,6 +26,18 @@ for the lesson names, `./learn nav` for C file navigation, and `./learn plugin`
 for a local Lua experiment. No website build or npm installation is required.
 `./learn js` opens a writable copy of the JavaScript sample used in the settings
 lesson. `./learn reset js` resets that copy with the same backup protection.
+
+Before using `./learn nav` in a new checkout, prepare the separate navigation
+fixtures once:
+
+```sh
+mkdir -p .practice
+git clone https://github.com/ThePrimeagen/vim-nav-playground.git .practice/navigation
+git -C .practice/navigation checkout --detach 7d58a0da6801bd81e8807f82c68cdcf631b987c6
+```
+
+Your configured Mac already has these fixtures. They remain a separate ignored
+checkout, so personal navigation edits are kept out of the course repository.
 
 `./learn reset 0` makes a fresh exercise-0 copy and backs up the previous copy
 under `.practice/backups/`. Opening an exercise normally keeps your progress.
@@ -150,13 +170,34 @@ A shortcut needs its normal context: quickfix navigation needs entries; Git-file
 search needs a Git project; a character search needs that character on the line.
 The runtime checks exercise those real contexts instead of only inspecting maps.
 
-## Local history and verification
+## History and verification
 
-Your adapted course is on `codex/billy-keybindings`, with a local checkpoint tag
-`course-2026-10-20-notes`. The earlier `course-2026-10-20-billy` tag preserves
-this adaptation before inline annotations. `master` retains the original upstream snapshot.
-The upstream remote remains ThePrimeagen’s repository; these adaptations are
-saved locally. `.practice/` and its backups stay out of commits.
+The published course is on **main** in
+[BIN0806/nvim_learning](https://github.com/BIN0806/nvim_learning).
+`codex/billy-keybindings` retains the working branch and the same adaptation
+history. These checkpoints let you revisit earlier versions:
+
+| Tag | Contents |
+| --- | --- |
+| source-vim-fundamentals-aed0a14 | Original ThePrimeagen source snapshot, before Billy’s adaptations. |
+| course-2026-10-20-billy | Initial adaptation to Billy’s NvChad keys, launcher and checks. |
+| course-2026-10-20-notes | Inline changes/binding-needed comments and optional Lua recipes. |
+| course-2026-10-20-published | Annotated course with readable comments, fresh-clone instructions and source credits. |
+
+The original course snapshot `aed0a14` remains in the commit history. On the
+configured Mac, ThePrimeagen’s remote is named `upstream` and your destination
+is `origin`; a fresh clone starts with only `origin`. `.practice/` and its backups
+stay local. The upstream course licenses and original author history are retained.
+
+### Publication log — October 20, 2026
+
+- Publish the full adapted history, working branch and course checkpoint tags.
+- Make startup instructions portable and pin the optional navigation fixture revision.
+- Add source and author credits at the bottom, including the retained site starter
+  and plugin-writing reference. Personal practice files and generated results remain ignored.
+- Validate the mirrored lessons, links, launcher, progress/reset behavior, clean
+  whitespace and the published repository contents. Editor settings are maintained
+  separately in nvim_settings; no editor mappings changed for this publication.
 
 From this folder, run `python3 .learning/check.py` for lesson/launcher checks.
 After `./learn plugin --print`, run
@@ -217,3 +258,26 @@ Fly through code faster than you thought possible using VIM! You’ll learn the 
 The **code** is this repo is licensed under the Apache 2.0 license.
 
 The **content** is this repo is licensed under the CC-BY-NC-4.0 license.
+
+## Sources and credits
+
+- **[ThePrimeagen](https://github.com/ThePrimeagen)** — original
+  [Vim fundamentals course repository](https://github.com/ThePrimeagen/vim-fundamentals)
+  and [navigation playground](https://github.com/ThePrimeagen/vim-nav-playground).
+- **[Frontend Masters](https://frontendmasters.com/courses/vim-fundamentals/)** —
+  publisher of the original course taught by ThePrimeagen.
+- **[Brian Holt / btholt](https://github.com/btholt/gatsby-course-starter)** —
+  Gatsby course-site starter retained in the upstream project.
+- **[Łukasz Jan Niemier / hauleth](https://github.com/hauleth)** —
+  [Writing a Vim Plugin](https://vimways.org/2019/writing-vim-plugin/), the
+  reference linked by the original first-plugin lesson.
+- **[NvChad](https://github.com/NvChad/NvChad)** — editor foundation used by
+  Billy’s profile and the adapted shortcut instructions.
+- **[BIN0806](https://github.com/BIN0806)** — profile integration, annotated
+  lessons and local practice workflow. The
+  [Neovim settings guide and its source credits](https://github.com/BIN0806/nvim_settings#sources-and-credits)
+  document the wider editor setup and its contributors.
+
+This is an adaptation of the credited course. The original author attribution
+and [content license](LICENSE) are retained; changes for Billy’s settings are
+identified before affected instructions and in the comparison above.
