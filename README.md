@@ -10,6 +10,10 @@ The launcher needs Python 3, `nvim` on PATH and the full
 [Billy Neovim profile](https://github.com/BIN0806/nvim_settings#profiles-installation-and-restore-points)
 for the custom keys described here. This repository contains the course and
 practice launcher; editor installation is documented in the settings repository.
+The [macOS dotfiles](https://github.com/BIN0806/dotfiles#kuns-neovim-tools) also
+carry the course keys in their Neovim snapshot. Oil, Snacks and Neogit are
+optional additions there. The lessons use NvimTree and Telescope so the same
+instructions work in both profiles.
 
 In an existing checkout, run `./learn` from the repository root. For a new checkout:
 
@@ -27,6 +31,10 @@ for a local Lua experiment. No website build or npm installation is required.
 `./learn js` opens a writable copy of the JavaScript sample used in the settings
 lesson. `./learn reset js` resets that copy with the same backup protection.
 
+If you installed the standalone profile under `~/.config/nvim-billy`, use
+`NVIM_APPNAME=nvim-billy ./learn` or `NVIM_APPNAME=nvim-billy ./learn 0` to select
+it explicitly. The launcher also works from WezTerm and iTerm2.
+
 Before using `./learn nav` in a new checkout, prepare the separate navigation
 fixtures once:
 
@@ -36,8 +44,8 @@ git clone https://github.com/ThePrimeagen/vim-nav-playground.git .practice/navig
 git -C .practice/navigation checkout --detach 7d58a0da6801bd81e8807f82c68cdcf631b987c6
 ```
 
-Your configured Mac already has these fixtures. They remain a separate ignored
-checkout, so personal navigation edits are kept out of the course repository.
+The configured Mac already has these fixtures. Run the setup only when
+`.practice/navigation` is missing. It is an ignored checkout for your edits.
 
 `./learn reset 0` makes a fresh exercise-0 copy and backs up the previous copy
 under `.practice/backups/`. Opening an exercise normally keeps your progress.
@@ -247,6 +255,9 @@ README records the global mapping changes and settings restore tag separately.
  As taught by ThePrimeagen for Frontend Masters
 </p>
 
+The original [Using Vim – Basics lesson](https://theprimeagen.github.io/vim-fundamentals/basic-usage/)
+corresponds to [our annotated `basic-usage` lesson](lessons/basic-usage.md).
+
 <p align="center">
   📝 <a href="https://theprimeagen.github.io/vim-fundamentals/">Course Website: VIM Fundamentals</a>
 </p>
@@ -255,9 +266,9 @@ Fly through code faster than you thought possible using VIM! You’ll learn the 
 
 ## License
 
-The **code** is this repo is licensed under the Apache 2.0 license.
+The **code** in this repo is licensed under the Apache 2.0 license.
 
-The **content** is this repo is licensed under the CC-BY-NC-4.0 license.
+The **content** in this repo is licensed under the CC-BY-NC-4.0 license.
 
 ## Sources and credits
 
